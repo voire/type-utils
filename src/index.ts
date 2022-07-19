@@ -16,3 +16,5 @@ export type DateISO = `${number}${number}${number}${number}-${number}${number}-$
 export type PartialRecord<TKey extends Numeric | symbol, TValue> = {
   [Key in TKey]?: TValue
 }
+
+export type Mapper<TSource = any, TTarget = any> = (data: TSource) => TTarget
