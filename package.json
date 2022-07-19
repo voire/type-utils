@@ -1,16 +1,33 @@
 {
   "name": "@voire/type-utils",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Pavel Yankovski <https://github.com/pyncz>",
   "license": "MIT",
   "keywords": [
     "typescript",
     "utils"
   ],
+  "scripts": {
+    "build": "tsc --emitDeclarationOnly",
+    "semantic-release": "semantic-release"
+  },
   "exports": {
     ".": {
       "types": "./index.d.ts"
     }
   },
-  "types": "./index.d.ts"
+  "types": "./index.d.ts",
+  "devDependencies": {
+    "semantic-release": "^17.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voire/type-utils.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": ["main"]
+  }
 }
