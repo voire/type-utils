@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "tsc --emitDeclarationOnly",
+    "update": "esno scripts/updateReadme.ts",
     "semantic-release": "semantic-release"
   },
   "exports": {
@@ -21,7 +22,10 @@
   ],
   "types": "./dist/index.d.ts",
   "devDependencies": {
-    "semantic-release": "^17.4.4"
+    "esno": "^0.16.3",
+    "@antfu/ni": "^0.17.2",
+    "semantic-release": "^19.0.2",
+    "simple-git-hooks": "^2.7.0"
   },
   "repository": {
     "type": "git",
@@ -31,6 +35,11 @@
     "access": "public"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "nr update && git add README.md"
   }
 }
