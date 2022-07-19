@@ -1,0 +1,16 @@
+{
+  "name": "@voire/type-utils",
+  "version": "0.0.0",
+  "author": "Pavel Yankovski <https://github.com/pyncz>",
+  "license": "MIT",
+  "keywords": [
+    "typescript",
+    "utils"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts"
+    }
+  },
+  "types": "./index.d.ts"
+}
