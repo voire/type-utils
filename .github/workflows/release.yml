@@ -18,10 +18,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install and build
+      - name: Install deps and build
         run: |
-          npm ci
-          npm run build
+          yarn install --frozen-lockfile
+          yarn run build
         env:
           CI: true
       - name: Semantic release
