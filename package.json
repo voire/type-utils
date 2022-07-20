@@ -22,10 +22,12 @@
   ],
   "types": "./dist/index.d.ts",
   "devDependencies": {
-    "esno": "^0.16.3",
     "@antfu/ni": "^0.17.2",
+    "@types/node": "^18.0.6",
+    "esno": "^0.16.3",
     "semantic-release": "^19.0.2",
-    "simple-git-hooks": "^2.7.0"
+    "simple-git-hooks": "^2.7.0",
+    "typescript": "^4.7.4"
   },
   "repository": {
     "type": "git",
