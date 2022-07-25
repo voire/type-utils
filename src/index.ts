@@ -9,7 +9,8 @@ export type ModelConstructor<TData, TModel = TData> = {
   new (data: TData): TModel
 }
 
-export type Entries<TKey = string, TValue = any> = [TKey, TValue][]
+export type Entry<TKey = string, TValue = any> = [TKey, TValue]
+export type Entries<TKey = string, TValue = any> = Entry<TKey, TValue>[]
 
 export type DateISO = `${number}${number}${number}${number}-${number}${number}-${number}${number}T${number}${number}:${number}${number}:${number}${number}.${number}${number}${number}Z`
 
