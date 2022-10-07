@@ -25,6 +25,8 @@ export type PartialRecord<TKey extends Numeric | symbol, TValue> = {
 
 export type Mapper<TSource = any, TTarget = any> = (data: TSource) => TTarget
 
+export interface NestedRecord<T> extends Record<string, T | NestedRecord<T>> {}
+
 ```
 
 ## Development
