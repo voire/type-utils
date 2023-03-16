@@ -2,6 +2,8 @@
 
 Provides some new types for your typescript project.
 
+[View the package on `npm`](https://www.npmjs.com/package/@voire/type-utils)
+
 <-- CODE -->
 
 ## Development
