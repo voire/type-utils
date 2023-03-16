@@ -2,6 +2,8 @@
 
 Provides some new types for your typescript project.
 
+[View the package on `npm`](https://www.npmjs.com/package/@voire/type-utils)
+
 ### `Bigint` types
 ```ts
 import type { HexString } from './hex'
@@ -9,11 +11,13 @@ import type { MaybeStringified, Stringified } from './stringified'
 
 /**
  * bigint or a bigint-like string
+ * @since 1.2.0
  */
 export type StringifiedBigint = Stringified<bigint>
 
 /**
  * bigint or a bigint-serializable string
+ * @since 1.2.0
  */
 export type BigintLike = MaybeStringified<bigint> | HexString
 
@@ -23,6 +27,7 @@ export type BigintLike = MaybeStringified<bigint> | HexString
 ```ts
 /**
  * Default key signature
+ * @since 1.2.0
  */
 export type Key = string | number | symbol
 
@@ -39,6 +44,7 @@ export type Optional<T> = T | undefined
 /**
  * Number-serializable type - `string` or `number`
  * @deprecated Use more safe `NumberLike` instead
+ * @see {@link NumberLike}
  */
 export type Numeric = string | number
 
@@ -84,6 +90,7 @@ export type PartialRecord<TKey extends Numeric | symbol, TValue> = {
 
 /**
  * Object of boolean flags of specified keys
+ * @since 1.2.0
  */
 export type Flags<T extends string> = {
   [key in T]: boolean
@@ -92,6 +99,7 @@ export type Flags<T extends string> = {
 /**
  * An object type without `on*` fields
  * May be useful for defining some UI components' props
+ * @since 1.2.0
  */
 export type OmitListeners<T> = Omit<T, `on${string}`>
 
@@ -111,6 +119,7 @@ export interface NestedRecord<T, K extends Key = Key> extends Record<Key, T | Ne
 ```ts
 /**
  * Hex string with prefix
+ * @since 1.2.0
  */
 export type HexString = `0x${string}`
 
@@ -122,11 +131,13 @@ import { Key } from './core'
 
 /**
  * Key of the input object
+ * @since 1.2.0
  */
 export type InferKey<T> = keyof T
 
 /**
  * Value of the input object
+ * @since 1.2.0
  */
 export type InferValue<T> = T extends Record<Key, infer Value>
   ? Value
@@ -134,6 +145,7 @@ export type InferValue<T> = T extends Record<Key, infer Value>
 
 /**
  * Item of the input array
+ * @since 1.2.0
  */
 export type InferItem<T> = T extends Record<number, any>
   ? T[number]
@@ -141,6 +153,7 @@ export type InferItem<T> = T extends Record<number, any>
 
 /**
  * Type of the certain field of the input object
+ * @since 1.2.0
  */
 export type InferField<T, K extends keyof T> = T extends Record<K, infer Field>
   ? Field
@@ -155,11 +168,13 @@ import type { MaybeStringified, Stringified } from './stringified'
 
 /**
  * Number or a number-like string
+ * @since 1.2.0
  */
 export type StringifiedNumber = Stringified<number>
 
 /**
  * Number or a number-serializable string
+ * @since 1.2.0
  */
 export type NumberLike = MaybeStringified<number> | HexString
 
@@ -169,11 +184,13 @@ export type NumberLike = MaybeStringified<number> | HexString
 ```ts
 /**
  * Provided type casted to string
+ * @since 1.2.0
  */
 export type Stringified<T extends string | number | bigint | boolean> = `${T}`
 
 /**
  * Provided type or the type casted to string
+ * @since 1.2.0
  */
 export type MaybeStringified<
   T extends string | number | bigint | boolean | symbol,
@@ -183,17 +200,67 @@ export type MaybeStringified<
 
 ### `Ui` types
 ```ts
+/**
+ * Horizontal position
+ * Useful for defining some UI components' props
+ * @since 1.2.0
+ */
 export type PositionX = 'left' | 'right'
+
+/**
+ * Vertical position
+ * Useful for defining some UI components' props
+ * @since 1.2.0
+ */
 export type PositionY = 'top' | 'bottom'
+
+/**
+ * Position
+ * Useful for defining some UI components' props
+ * @since 1.2.0
+ */
 export type Position = PositionX | PositionY
 
+/**
+ * X-Axis alignment
+ * Useful for defining some UI components' props
+ * @since 1.2.0
+ */
 export type AlignX = PositionX | 'center'
+
+/**
+ * Y-Axis alignment
+ * Useful for defining some UI components' props
+ * @since 1.2.0
+ */
 export type AlignY = PositionY | 'center'
+
+/**
+ * Alignment
+ * Useful for defining some UI components' props
+ * @since 1.2.0
+ */
 export type Align = Position | 'center'
 
+/**
+ * Direction
+ * Useful for defining some UI components' and animations' props
+ * @since 1.2.0
+ */
 export type Direction = 'x' | 'y'
 
+/**
+ * Range of sizes
+ * Useful for defining some UI components' props
+ * @since 1.2.0
+ */
 export type Size = 'sm' | 'md' | 'lg'
+
+/**
+ * Extended range of sizes
+ * Useful for defining some UI components' props
+ * @since 1.2.0
+ */
 export type SizeExtra = 'xs' | Size | 'xl'
 
 ```

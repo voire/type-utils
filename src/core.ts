@@ -1,5 +1,6 @@
 /**
  * Default key signature
+ * @since 1.2.0
  */
 export type Key = string | number | symbol
 
@@ -16,6 +17,7 @@ export type Optional<T> = T | undefined
 /**
  * Number-serializable type - `string` or `number`
  * @deprecated Use more safe `NumberLike` instead
+ * @see {@link NumberLike}
  */
 export type Numeric = string | number
 
@@ -61,6 +63,7 @@ export type PartialRecord<TKey extends Numeric | symbol, TValue> = {
 
 /**
  * Object of boolean flags of specified keys
+ * @since 1.2.0
  */
 export type Flags<T extends string> = {
   [key in T]: boolean
@@ -69,6 +72,7 @@ export type Flags<T extends string> = {
 /**
  * An object type without `on*` fields
  * May be useful for defining some UI components' props
+ * @since 1.2.0
  */
 export type OmitListeners<T> = Omit<T, `on${string}`>
 
