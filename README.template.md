@@ -2,9 +2,7 @@
 
 Provides some new types for your typescript project.
 
-```ts
 <-- CODE -->
-```
 
 ## Development
 

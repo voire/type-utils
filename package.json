@@ -8,14 +8,25 @@
     "utils"
   ],
   "scripts": {
+    "prebuild": "nr gen:exports",
     "build": "tsc --emitDeclarationOnly",
-    "update": "esno scripts/updateReadme.ts",
+    "postbuild": "nr cleanup",
+    "gen:exports": "esno scripts/genExports.ts",
+    "cleanup": "esno scripts/cleanUp.ts",
+    "gen:readme": "esno scripts/updateReadme.ts",
     "semantic-release": "semantic-release"
   },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./core": { "types": "./dist/core.d.ts" },
+    "./infer": { "types": "./dist/infer.d.ts" },
+    "./stringified": { "types": "./dist/stringified.d.ts" },
+    "./ui": { "types": "./dist/ui.d.ts" },
+    "./number": { "types": "./dist/number.d.ts" },
+    "./bigint": { "types": "./dist/bigint.d.ts" },
+    "./hex": { "types": "./dist/hex.d.ts" }
   },
   "files": [
     "dist"
@@ -42,6 +53,6 @@
     ]
   },
   "simple-git-hooks": {
-    "pre-commit": "nr update && git add README.md"
+    "pre-commit": "nr gen:readme && git add README.md"
   }
 }
