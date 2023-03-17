@@ -111,7 +111,7 @@ export type Mapper<TSource = any, TTarget = any> = (data: TSource) => TTarget
 /**
  * The Record with the type or a new Record as a value
  */
-export interface NestedRecord<T, K extends Key = Key> extends Record<Key, T | NestedRecord<T, K>> {}
+export interface NestedRecord<T, K extends Key = Key> extends Record<string, T | NestedRecord<T, K>> {}
 
 ```
 
@@ -139,7 +139,7 @@ export type InferKey<T> = keyof T
  * Value of the input object
  * @since 1.2.0
  */
-export type InferValue<T> = T extends Record<Key, infer Value>
+export type InferValue<T> = T extends Record<keyof T, infer Value>
   ? Value
   : never
 

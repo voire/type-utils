@@ -10,7 +10,7 @@ export type InferKey<T> = keyof T
  * Value of the input object
  * @since 1.2.0
  */
-export type InferValue<T> = T extends Record<Key, infer Value>
+export type InferValue<T> = T extends Record<keyof T, infer Value>
   ? Value
   : never
 
